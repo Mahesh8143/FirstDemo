@@ -1,18 +1,15 @@
 
 pipeline {
   agent any
- 
-  tools {
-  maven 'Maven'
-  }
   
   stages {
     
     stage ('Build') {
       
-      steps {
-      sh 'mvn clean install -f junit4-main/pom.xml'
-      }
+       steps {
+        withSonarQubeEnv('SonarQube') {
+        sh 'mvn -f junit4-main/pom.xml sonar:sonar'
+       }
       
     } 
   }   
