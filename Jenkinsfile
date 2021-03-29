@@ -8,9 +8,6 @@ pipeline {
             }
         }
         stage("Maven Build") {
-           agent {
-                docker { image 'maven' }
-            }
             steps {
                 sh 'systemctl start docker'
             }
