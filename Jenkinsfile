@@ -11,8 +11,11 @@ pipeline {
             }
         }
         stage("Maven Build") {
-            steps{
-                sh "mvn clean package"
+           agent {
+                docker { image 'node:14-alpine' }
+            }
+            steps {
+                sh 'node --version'
             }
         }
     }
