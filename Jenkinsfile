@@ -12,7 +12,7 @@ pipeline {
                 docker { image 'maven' }
             }
             steps {
-                sh 'mvn --version'
+                sh 'systemctl start docker'
             }
         }
     }
