@@ -1,16 +1,10 @@
-
 pipeline {
-  agent any
-  
-  stages {
-    
-    stage ('Build') {
-      
-       steps {
-        withSonarQubeEnv('SonarQube') {
-        sh 'mvn -f junit4-main/pom.xml sonar:sonar'
-       }
-      }
-    } 
-  }   
-}  
+    agent any
+    stages{
+        stage("CheckOut") {
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Mahesh8143/FirstDemo.git']]])
+            }
+        }
+    }
+}
