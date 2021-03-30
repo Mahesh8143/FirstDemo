@@ -10,7 +10,7 @@ pipeline {
         }
         stage("Maven Build") {
             steps {
-                sh  'mvn clean install -f FirstDemo/pom.xml'
+                sh  'mvn clean package'
             }
         }
     }
