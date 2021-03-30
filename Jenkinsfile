@@ -3,7 +3,7 @@ pipeline {
      
     environment {
         PATH = "C:/Soft/apache-maven-3.6.3/bin"
-        Path = "%SystemRoot%\system32"
+        Path = "c:/windows/system32"
     }
     
     stages{
