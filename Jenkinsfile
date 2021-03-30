@@ -2,8 +2,8 @@ pipeline {
     agent any
      
     environment {
-        PATH = "C:/Soft/apache-maven-3.6.3"
-        Path = "c:/windows/system32"
+        PATH = "/opt/maven3/bin:$PATH"
+        
     }
     
     stages{
@@ -14,8 +14,7 @@ pipeline {
         }
         stage("Maven Build") {
             steps {
-                bat 'cd C:/Soft'
-                bat 'mvn clean package'
+                sh 'mvn clean package'
             }
         }
     }
