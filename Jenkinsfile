@@ -2,8 +2,8 @@ pipeline {
     agent any
      
     environment {
-        PATH = "C:/Soft/apache-maven-3.6.3/bin"
-       // Path = "c:/windows/system32"
+        PATH = "C:/Soft/apache-maven-3.6.3"
+        Path = "c:/windows/system32"
     }
     
     stages{
