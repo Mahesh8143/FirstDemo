@@ -1,11 +1,7 @@
 pipeline {
     agent any
      
-    environment {
-        PATH = "C:/Soft/apache-maven-3.6.3/bin"
-        
-    }
-    
+  
     stages{
         stage("CheckOut") {
             steps{
@@ -14,7 +10,7 @@ pipeline {
         }
         stage("Maven Build") {
             steps {
-                sh 'mvn clean package'
+                sh  'mvn clean install -f FirstDemo/pom.xml'
             }
         }
     }
