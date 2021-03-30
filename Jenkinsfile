@@ -15,6 +15,7 @@ pipeline {
         stage("Maven Build") {
             steps {
                 bat 'cd C:/Soft'
+                bat 'mvn clean package'
             }
         }
     }
